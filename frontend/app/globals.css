@@ -1416,21 +1416,25 @@ button {
   gap: 8px;
 }
 
-.dashboard-nav a {
+.dashboard-nav button {
   display: flex;
   min-height: 44px;
   align-items: center;
   border: 1px solid transparent;
   border-radius: 8px;
+  background: transparent;
   padding: 0 13px;
   color: var(--muted);
+  cursor: pointer;
+  font: inherit;
   font-size: 0.92rem;
   font-weight: 760;
+  text-align: left;
   transition: background 0.2s ease-out, border-color 0.2s ease-out, color 0.2s ease-out;
 }
 
-.dashboard-nav a:hover,
-.dashboard-nav a.active {
+.dashboard-nav button:hover,
+.dashboard-nav button.active {
   border-color: rgba(212, 166, 90, 0.26);
   background: rgba(212, 166, 90, 0.1);
   color: var(--soft-gold);
@@ -1543,6 +1547,11 @@ button {
   margin-bottom: 14px;
   overflow: hidden;
   padding: 22px;
+}
+
+.dashboard-view {
+  display: grid;
+  gap: 14px;
 }
 
 .command-copy h2 {
@@ -1817,6 +1826,88 @@ button {
   font-weight: 800;
 }
 
+.connection-flow {
+  display: grid;
+  gap: 12px;
+}
+
+.connection-step {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 18px;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.035);
+  padding: 18px;
+}
+
+.connection-step.locked {
+  opacity: 0.58;
+}
+
+.connection-step span {
+  color: var(--gold);
+  font-size: 0.76rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.connection-step h3 {
+  margin-top: 8px;
+  color: var(--foreground);
+  font-size: 1.1rem;
+  font-weight: 780;
+}
+
+.connection-step p {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.58;
+}
+
+.connection-step button {
+  min-height: 42px;
+  min-width: 152px;
+  cursor: pointer;
+  border: 1px solid rgba(212, 166, 90, 0.32);
+  border-radius: 8px;
+  background: rgba(212, 166, 90, 0.1);
+  padding: 0 14px;
+  color: var(--soft-gold);
+  font-weight: 850;
+  transition: transform 0.2s ease-out, border-color 0.2s ease-out, background 0.2s ease-out;
+}
+
+.connection-step button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  border-color: rgba(232, 188, 114, 0.52);
+  background: rgba(212, 166, 90, 0.16);
+}
+
+.connection-step button:disabled {
+  cursor: not-allowed;
+  opacity: 0.68;
+}
+
+.corsair-step {
+  border-color: rgba(117, 141, 255, 0.22);
+  background: rgba(117, 141, 255, 0.055);
+}
+
+.connection-status {
+  margin: 14px 0 0;
+  border: 1px solid rgba(212, 166, 90, 0.25);
+  border-radius: 8px;
+  background: rgba(212, 166, 90, 0.08);
+  padding: 12px 14px;
+  color: var(--soft-gold);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
 .password-meter i.filled {
   background: linear-gradient(90deg, var(--gold), var(--soft-gold));
 }
@@ -1998,7 +2089,7 @@ button {
     padding-bottom: 2px;
   }
 
-  .dashboard-nav a {
+  .dashboard-nav button {
     flex: 0 0 auto;
     min-height: 40px;
   }
@@ -2200,6 +2291,14 @@ button {
 
   .panel-heading button,
   .inbox-footer button {
+    width: 100%;
+  }
+
+  .connection-step {
+    grid-template-columns: 1fr;
+  }
+
+  .connection-step button {
     width: 100%;
   }
 }
