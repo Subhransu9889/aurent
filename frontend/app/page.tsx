@@ -173,7 +173,7 @@ export default function Home() {
             GitHub
           </a>
         </div>
-        <a className="nav-cta" href="#join">
+        <a className="nav-cta" href="/auth">
           Join Beta
         </a>
       </nav>
@@ -191,7 +191,7 @@ export default function Home() {
             let your personal AI assistant handle the busywork.
           </p>
           <div className="hero-actions">
-            <a className="primary-button" href="#join">
+            <a className="primary-button" href="/auth">
               Get Started
             </a>
             <a className="secondary-button" href="#agent">
@@ -279,7 +279,7 @@ export default function Home() {
       <section className="final-cta" id="join">
         <span>Ready to work differently?</span>
         <h2>Aurent is the AI command center for email, calendar, and everything between.</h2>
-        <a className="primary-button" href="mailto:hello@aurent.ai">
+        <a className="primary-button" href="/auth">
           Join the Beta
         </a>
       </section>
